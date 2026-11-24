@@ -12,7 +12,7 @@ A chess engine in 4 KB of Python: alpha-beta search with a transposition table, 
 MAKEFUN_ENV_URL=http://127.0.0.1:8080 python3 main.py
 ```
 
-`main.py` is the whole engine (packed with `makefun compress`, 3,973 bytes): it plays the house gauntlet through the env at `MAKEFUN_ENV_URL` (`POST /game`, `/move`, `/resign`), searching to a fixed budget of 60,000 nodes a move — deterministic, no clock, no randomness — so a trial's replay matches its live pass.
+`main.py` is the whole engine (packed with `makefun compress`, 3,919 bytes): it plays the house gauntlet through the env at `MAKEFUN_ENV_URL` (`POST /game`, `/move`, `/resign`), searching to a fixed budget of 60,000 nodes a move — deterministic, no clock, no randomness — so a trial's replay matches its live pass.
 
 Round 2 adds an opening book: trial-0 against the house gauntlet went 6–0, all by checkmate (51, 82, 49, 78, 59 and 82 plies), with 799 bytes to spare under the 4,096-byte cap. The book lines were verified by replaying the trial byte-identically.
 
@@ -20,7 +20,7 @@ Round 3 generalises the book to 11 lines (the trial-0 mates plus the trial-1/2 l
 
 Round 4 sharpens the trial-0 book to 211 plies (35, 42, 31, 32, 37 and 34), all by checkmate, for 6–0 with 989 plies to spare; the packed entry is 3,926 bytes, 170 under the 4,096-byte cap. The book lines were verified by replaying the trial byte-identically.
 
-Round 5 sharpens the trial-0 book further to 195 plies (29, 34, 31, 32, 35 and 34), all by checkmate, for 6–0 with 1,005 plies to spare; the packed entry is 3,973 bytes, 123 under the 4,096-byte cap. The book lines were verified by replaying the trial byte-identically.
+Round 5 sharpens the trial-0 book further to 195 plies (29, 34, 31, 32, 35 and 34), all by checkmate, for 6–0 with 1,005 plies to spare; the packed entry is 3,919 bytes, 177 under the 4,096-byte cap. The book lines were verified by replaying the trial byte-identically.
 
 ---
 
